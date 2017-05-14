@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    
+   <!-- 1) assigned generator -->
+   
+    	<!-- <class name="com.maroti.beans.Customer">
+    		<id name="id">
+    		<generator class="assigned"/> It is by default primary key generator
+    										User should insert the primary key manually 
+    		</id>
+    		<property name="name"/>
+    		<property name="addr"/>
+    	</class>
+    	 -->
+    	 
+    	 
+    <!-- 2) increment generator -->	 
+    	 
+   <!--  	 <class name="com.maroti.beans.Customer">
+    		<id name="id">
+    		<generator class="increment"/> application should increment the primary key automatically 
+    										
+    		</id>
+    		<property name="name"/>
+    		<property name="addr"/>
+    	</class>
+    --> 
+    
+    
+    
+    <!-- 3) identity generator -->
+     	 <!-- <class name="com.maroti.beans.Customer">
+    		<id name="id">
+    		<generator class="identity"/> Database table increment the primary key automatically 
+    										
+    		</id>
+    		<property name="name"/>
+    		<property name="addr"/>
+    	</class> -->
+    	
+    	<!-- native generator -->
+    
+    <!-- 4) <class name="com.maroti.beans.Customer">
+    		<id name="id">
+    		<generator class="native"/> assigned, increment and identity, internally one of the genrator use that 
+    										
+    		</id>
+    		<property name="name"/>
+    		<property name="addr"/>
+    	</class> -->
+   
+   
+   <!-- 5) hilo generator -->
+   
+    <class name="com.maroti.beans.Customer">
+    		<id name="id">
+    		<generator class="com.maroti.hibernate.generator.MyGenerator"/>  <!-- Custome generator -->
+    										
+    		</id>
+    		<property name="name"/>
+    		<property name="addr"/>
+    	</class>
+    
+    </hibernate-mapping>
